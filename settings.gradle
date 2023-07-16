@@ -1,0 +1,3 @@
+
+rootProject.name = "DemoFlipkart"
+include ':app'
