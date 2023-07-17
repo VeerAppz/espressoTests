@@ -1,0 +1,24 @@
+apiVersion: v1alpha
+kind: espresso
+defaults: {}
+showConsoleLog: false
+sauce:
+  region: eu-central-1
+  concurrency: 10
+espresso:
+  app: Flipkart-debug.apk
+  testApp: Flipkart-debug-androidTest.apk
+suites:
+- name: espresso - Samsung .* - Android GoogleAPI Emulator
+  devices:
+  - name: Samsung .*
+  emulators:
+  - name: Android GoogleAPI Emulator
+    platformVersions:
+    - "13.0"
+artifacts:
+  download:
+    match:
+    - '*'
+    when: fail
+    directory: artifacts

@@ -1,0 +1,24 @@
+apiVersion: v1alpha
+kind: espresso
+defaults: {}
+showConsoleLog: false
+sauce:
+  region: eu-central-1
+  concurrency: 10
+espresso:
+  app: Flipkart_Online_Shopping_App_v7.65.apk
+  testApp: Flipkart-debug-androidTest.apk
+suites:
+- name: espresso - Samsung .* - Android Emulator
+  devices:
+  - name: Samsung .*
+  emulators:
+  - name: Android Emulator
+    platformVersions:
+    - "8.0"
+artifacts:
+  download:
+    match:
+    - '*'
+    when: fail
+    directory: artifacts
